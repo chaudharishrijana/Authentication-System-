@@ -39,7 +39,7 @@ graph TD
 - User registers → server creates user and issues a JWT token.
 - User logs in → server validates credentials and returns JWT token.
 - Frontend stores token in Local Storage for subsequent requests.
-- Access protected routes (e.g., Dashboard) → token validity checked.
+- Access protected routes ( Dashboard) → token validity checked.
 - Token expired or invalid → user is automatically logged out and redirected to login page.
 
 ### Technology Stack
@@ -50,6 +50,11 @@ graph TD
 | **Backend**     | Django, Django REST Framework, MySQL   |
 | **Authentication** | JWT (JSON Web Tokens), djangorestframework-simplejwt |
 | **Dev Tools**   | Git, GitHub, VS Code                   |
+
+
+### Interface Overview
+!Authentication System (assets/register.png) (assets/login.png) (dashboard.png)
+*Figure: UI of Authentication System*
 
 
 
