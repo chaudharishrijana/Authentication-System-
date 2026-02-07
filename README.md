@@ -3,7 +3,7 @@
 
 # JWT Authentication System (Django + React)
 
-A full-stack authentication system built with **Django REST Framework**, **React (Vite)**, and **MySQL**, using **JWT (JSON Web Tokens)** for secure user authentication.  
+A full-stack authentication system built with **Django REST Framework**, **React-vite framework)**, and **MySQL**, using **JWT (JSON Web Tokens)** for secure user authentication.  
 
 The system supports **user registration, login, protected dashboard routes**, and **auto logout when tokens expire**.
 
@@ -46,7 +46,7 @@ graph TD
 
 | Layer            | Technologies / Tools                   |
 |-----------------|---------------------------------------|
-| **Frontend**    | React.js, Vite, JSX, CSS               |
+| **Frontend**    | React-vite, JSX, CSS               |
 | **Backend**     | Django, Django REST Framework, MySQL   |
 | **Authentication** | JWT (JSON Web Tokens), djangorestframework-simplejwt |
 | **Dev Tools**   | Git, GitHub, VS Code                   |
