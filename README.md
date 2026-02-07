@@ -41,12 +41,12 @@ graph TD
 
 ```
 ### Explanation:
-- User registers → server creates user and issues a JWT token.
-- User logs in → server validates credentials and returns JWT token.
-- Frontend stores token in Local Storage for subsequent requests.
-- Access protected routes ( Dashboard) → token validity checked.
-- Token expired or invalid → user is automatically logged out and redirected to login page.
-
+- Check if user is registered → If not, register first.
+- Login → Server validates credentials.
+- Success → JWT token issued and stored in Local Storage.
+- Access Dashboard → Token validity checked.
+- Token valid → Access granted, otherwise redirect to Login.
+- Token expiry → Auto logout and redirect to Login.
 ### Technology Stack
 
 | Layer            | Technologies / Tools                   |
