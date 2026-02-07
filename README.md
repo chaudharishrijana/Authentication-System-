@@ -20,18 +20,23 @@ The system supports **user registration, login, protected dashboard routes**, an
 ## 🧩 Workflow / System Overview
 
 ```mermaid
+
+
 graph TD
-    A[User] --> B[Register]
-    B --> C{Success?}
-    C -->|Yes| D[JWT Token Issued]
-    D --> E[Login]
-    E --> F[Token Stored in Local Storage]
-    F --> G[Access Dashboard]
-    G --> H{Token Valid?}
-    H -->|Yes| I[Access Granted]
-    H -->|No| J[Redirect to Login]
-    F --> K[Token Expiry]
-    K --> J
+    A[User Accesses App] --> B{Is User Registered?}
+    B -->|No| C[Register User]
+    C --> D[Login]
+    B -->|Yes| D[Login]
+    D --> E[Success?]
+    E -->|Yes| F[JWT Token Issued & Stored in Local Storage]
+    E -->|No| G[Show Login Error]
+    F --> H[Access Dashboard]
+    H --> I{Token Valid?}
+    I -->|Yes| J[Access Granted]
+    I -->|No| K[Redirect to Login]
+    F --> L[Token Expiry]
+    L --> K
+
 
 
 ```
