@@ -53,9 +53,9 @@ graph TD
 
 
 ### Interface Overview
-![Authentication System](assets/register.png)
-![Authentication System](assets/login.png) 
-![Authentication System](dashboard.png)
+![Authentication System](frontend/src/assets/register.png)
+![Authentication System](frontend/src/assets/login.png) 
+![Authentication System](frontend/src/dashboard.png)
 *Figure: UI of Authentication System*
 
 
