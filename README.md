@@ -17,43 +17,40 @@ The system supports **user registration, login, protected dashboard routes**, an
 - MySQL database integration
 - Simple and clean React frontend with centralized login/register forms
 
-## 🧩 Workflow Overview
+## 🧩 Workflow / System Overview
 
-The authentication system follows this workflow:
-     +----------------+
-     |     User       |
-     +----------------+
-             │
-             ▼
-   +-------------------+
-   |    Register       |
-   +-------------------+
-             │
-     Success / Token Issued
-             │
-             ▼
-   +-------------------+
-   |      Login        |
-   +-------------------+
-             │
-     Success / Token Stored
-             │
-             ▼
-   +-------------------+
-   |  Access Dashboard |
-   +-------------------+
-             │
-   Token Valid? ──────────┐
-     │ Yes                │ No
-     ▼                    ▼
+```mermaid
+graph TD
+    A[User] --> B[Register]
+    B --> C{Success?}
+    C -->|Yes| D[JWT Token Issued]
+    D --> E[Login]
+    E --> F[Token Stored in Local Storage]
+    F --> G[Access Dashboard]
+    G --> H{Token Valid?}
+    H -->|Yes| I[Access Granted]
+    H -->|No| J[Redirect to Login]
+    F --> K[Token Expiry]
+    K --> J
 
-### 🔹 Explanation:
 
-1. **User registers** → server creates user and issues a JWT token.  
-2. **User logs in** → server validates credentials and returns JWT token.  
-3. **Frontend stores token** in Local Storage for subsequent requests.  
-4. **Access protected routes** (e.g., Dashboard) → token validity checked.  
-5. **Token expired or invalid** → user is automatically logged out and redirected to login page.
+```
+### Explanation:
+- User registers → server creates user and issues a JWT token.
+- User logs in → server validates credentials and returns JWT token.
+- Frontend stores token in Local Storage for subsequent requests.
+- Access protected routes (e.g., Dashboard) → token validity checked.
+- Token expired or invalid → user is automatically logged out and redirected to login page.
+
+### Technology Stack
+
+| Layer            | Technologies / Tools                   |
+|-----------------|---------------------------------------|
+| **Frontend**    | React.js, Vite, JSX, CSS               |
+| **Backend**     | Django, Django REST Framework, MySQL   |
+| **Authentication** | JWT (JSON Web Tokens), djangorestframework-simplejwt |
+| **Dev Tools**   | Git, GitHub, VS Code                   |
+
 
 
 
